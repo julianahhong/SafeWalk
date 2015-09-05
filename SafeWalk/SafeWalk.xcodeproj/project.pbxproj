@@ -13,7 +13,7 @@
 		36BAB0411B9AD9E900F2B5D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36BAB0401B9AD9E900F2B5D2 /* Images.xcassets */; };
 		36BAB0441B9AD9E900F2B5D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BAB0421B9AD9E900F2B5D2 /* LaunchScreen.xib */; };
 		36BAB0501B9AD9E900F2B5D2 /* SafeWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BAB04F1B9AD9E900F2B5D2 /* SafeWalkTests.swift */; };
-		3B9803E789EB4458A8194757 /* libPods-SafeWalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B94B422CC6EE8D5A172DA6 /* libPods-SafeWalk.a */; };
+		36BAB05A1B9B478E00F2B5D2 /* libPods-SafeWalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAB0591B9B478E00F2B5D2 /* libPods-SafeWalk.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03B94B422CC6EE8D5A172DA6 /* libPods-SafeWalk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeWalk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BAB0341B9AD9E900F2B5D2 /* SafeWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BAB0381B9AD9E900F2B5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BAB0391B9AD9E900F2B5D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		36BAB0491B9AD9E900F2B5D2 /* SafeWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BAB04E1B9AD9E900F2B5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BAB04F1B9AD9E900F2B5D2 /* SafeWalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeWalkTests.swift; sourceTree = "<group>"; };
+		36BAB0591B9B478E00F2B5D2 /* libPods-SafeWalk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-SafeWalk.a"; sourceTree = "<group>"; };
 		AAFBA120FE917D67A0576AAF /* Pods-SafeWalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeWalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeWalk/Pods-SafeWalk.debug.xcconfig"; sourceTree = "<group>"; };
 		E11AC9A7AF90F264A557CB8D /* Pods-SafeWalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeWalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeWalk/Pods-SafeWalk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B9803E789EB4458A8194757 /* libPods-SafeWalk.a in Frameworks */,
+				36BAB05A1B9B478E00F2B5D2 /* libPods-SafeWalk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +122,7 @@
 		BDCEAC523FEDBF35467600B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				03B94B422CC6EE8D5A172DA6 /* libPods-SafeWalk.a */,
+				36BAB0591B9B478E00F2B5D2 /* libPods-SafeWalk.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -404,6 +404,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SafeWalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -416,6 +420,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SafeWalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
