@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C159A121937DEF70AF2B393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD03C0F933D5D6A6ECD0AF2C /* Foundation.framework */; };
+		EFC6FBB674ECB470A1FC2FB7 /* Pods-SafeWalk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD851AC04A93E6DBFCB8920 /* Pods-SafeWalk-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0EB8F01B79FA97375800944E /* Pods-SafeWalk-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SafeWalk-environment.h"; sourceTree = "<group>"; };
+		2DCC239C51533460B641B0EB /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2F4DF399D0F214DDAFF2FFBB /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		3CD851AC04A93E6DBFCB8920 /* Pods-SafeWalk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SafeWalk-dummy.m"; sourceTree = "<group>"; };
+		7729EDF22209103EDC099B68 /* libPods-SafeWalk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeWalk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9236EA51761CAD3328E2B59F /* Pods-SafeWalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeWalk.release.xcconfig"; sourceTree = "<group>"; };
+		949EAC8D08ECE6C1A5B2A21F /* Pods-SafeWalk-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SafeWalk-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AF8BA128BF6435DBCEF21037 /* Pods-SafeWalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeWalk.debug.xcconfig"; sourceTree = "<group>"; };
+		B40D5E1DE4C6E884F12C35F9 /* Pods-SafeWalk-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SafeWalk-acknowledgements.plist"; sourceTree = "<group>"; };
+		C9199DE4AF02F55E833A5599 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		DD03C0F933D5D6A6ECD0AF2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F0DB9ADD4AFA03ADBBBA820A /* Pods-SafeWalk-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SafeWalk-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13F570A41EC4B679B4840289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C159A121937DEF70AF2B393 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		088AB850E4237FB7EC0335A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F4DF399D0F214DDAFF2FFBB /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		11DE48CD3D6250BE62404BDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4D96858D58F1B2DE7E94C63 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3676463749A4FBBCC3EBCCCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7729EDF22209103EDC099B68 /* libPods-SafeWalk.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8918B9A1BAE79BFBF0B0EC0E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6A45114FC26BCC02564DFD0 /* Pods-SafeWalk */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9139A77C076B17A09C5660F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA99F7FBE710672865EE4843 /* GoogleMaps */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B6A45114FC26BCC02564DFD0 /* Pods-SafeWalk */ = {
+			isa = PBXGroup;
+			children = (
+				949EAC8D08ECE6C1A5B2A21F /* Pods-SafeWalk-acknowledgements.markdown */,
+				B40D5E1DE4C6E884F12C35F9 /* Pods-SafeWalk-acknowledgements.plist */,
+				3CD851AC04A93E6DBFCB8920 /* Pods-SafeWalk-dummy.m */,
+				0EB8F01B79FA97375800944E /* Pods-SafeWalk-environment.h */,
+				F0DB9ADD4AFA03ADBBBA820A /* Pods-SafeWalk-resources.sh */,
+				AF8BA128BF6435DBCEF21037 /* Pods-SafeWalk.debug.xcconfig */,
+				9236EA51761CAD3328E2B59F /* Pods-SafeWalk.release.xcconfig */,
+			);
+			name = "Pods-SafeWalk";
+			path = "Target Support Files/Pods-SafeWalk";
+			sourceTree = "<group>";
+		};
+		BB6B7088F886D370459883DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9199DE4AF02F55E833A5599 /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA99F7FBE710672865EE4843 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				BB6B7088F886D370459883DC /* Frameworks */,
+				088AB850E4237FB7EC0335A8 /* Resources */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		E624F00CDC73B069404EA154 = {
+			isa = PBXGroup;
+			children = (
+				2DCC239C51533460B641B0EB /* Podfile */,
+				11DE48CD3D6250BE62404BDB /* Frameworks */,
+				9139A77C076B17A09C5660F1 /* Pods */,
+				3676463749A4FBBCC3EBCCCD /* Products */,
+				8918B9A1BAE79BFBF0B0EC0E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F4D96858D58F1B2DE7E94C63 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DD03C0F933D5D6A6ECD0AF2C /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACE922A1AD9AE96746FAB3B6 /* Pods-SafeWalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 868C51CACCBA26D08EE65DD8 /* Build configuration list for PBXNativeTarget "Pods-SafeWalk" */;
+			buildPhases = (
+				61D0E31785E16CB3DCFF8CD6 /* Sources */,
+				13F570A41EC4B679B4840289 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-SafeWalk";
+			productName = "Pods-SafeWalk";
+			productReference = 7729EDF22209103EDC099B68 /* libPods-SafeWalk.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D80772DE1162AF9AA4B17D20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 129ADA66FD895A95644C4572 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E624F00CDC73B069404EA154;
+			productRefGroup = 3676463749A4FBBCC3EBCCCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACE922A1AD9AE96746FAB3B6 /* Pods-SafeWalk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		61D0E31785E16CB3DCFF8CD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC6FBB674ECB470A1FC2FB7 /* Pods-SafeWalk-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		43E23AB96466F6E44EB5F139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF8BA128BF6435DBCEF21037 /* Pods-SafeWalk.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ADE7A6B7B3A742B504A8FD4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1DFF1CB76F5E56E125E6AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BF8BB9692E2BE2CC575A1857 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9236EA51761CAD3328E2B59F /* Pods-SafeWalk.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		129ADA66FD895A95644C4572 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1DFF1CB76F5E56E125E6AC5 /* Debug */,
+				ADE7A6B7B3A742B504A8FD4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		868C51CACCBA26D08EE65DD8 /* Build configuration list for PBXNativeTarget "Pods-SafeWalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E23AB96466F6E44EB5F139 /* Debug */,
+				BF8BB9692E2BE2CC575A1857 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D80772DE1162AF9AA4B17D20 /* Project object */;
+}
