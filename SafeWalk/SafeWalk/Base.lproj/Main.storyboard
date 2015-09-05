@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="574-tU-FD4">
             <objects>
-                <viewController id="V1n-ta-R4f" sceneMemberID="viewController">
+                <viewController id="V1n-ta-R4f" customClass="ViewController" customModule="SafeWalk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sDY-fg-as9"/>
                         <viewControllerLayoutGuide type="bottom" id="ggs-Ie-yu0"/>
@@ -15,13 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="8RO-VE-Grw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-Op-ISb" customClass="GMSMapView">
+                                <rect key="frame" x="187.5" y="333.5" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="HZw-Op-ISb" secondAttribute="centerX" id="OAv-3L-775"/>
+                            <constraint firstAttribute="centerY" secondItem="HZw-Op-ISb" secondAttribute="centerY" id="jdL-HE-cde"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="HZw-Op-ISb" id="L8Y-15-kBl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zly-dX-5go" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="-809"/>
+            <point key="canvasLocation" x="-204.5" y="-809.5"/>
         </scene>
     </scenes>
 </document>
