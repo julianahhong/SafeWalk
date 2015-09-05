@@ -17,14 +17,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 
     override func viewDidLoad(){
         super.viewDidLoad()
-
-//        var camera = GMSCameraPosition.cameraWithLatitude(-33.8683, longitude:151.2086, zoom:6)
-//        mapView = GMSMapView.mapWithFrame(CGRectZero, camera:camera)
-//        self.view = mapView
-//        
-//        mapView.mapType = kGMSTypeSatellite
-//        mapView.myLocationEnabled = true
-
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -49,8 +41,10 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let location = locations.first as? CLLocation {
             
-            // 6
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            var camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+
+            var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+            self.view = mapView
             
             // 7
             locationManager.stopUpdatingLocation()
