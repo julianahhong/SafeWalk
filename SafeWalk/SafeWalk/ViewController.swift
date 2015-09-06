@@ -5,86 +5,190 @@
 //  Created by Juliana Hong on 9/5/15.
 //  Copyright (c) 2015 Juliana Hong. All rights reserved.
 //
-
 import UIKit
-import GoogleMaps
+import MapKit
 
-class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
-    
-    @IBOutlet weak var mapView: GMSMapView!
-    
-    let locationManager = CLLocationManager()
+class ViewController: UIViewController, UISearchBarDelegate {
+    //@IBOutlet var searchBar: UISearchBar!
+    //@IBOutlet var theMap: MKMapView!
 
-    override func viewDidLoad(){
+    var searchController:UISearchController!
+    var annotation:MKAnnotation!
+    var localSearchRequest:MKLocalSearchRequest!
+    var localSearch:MKLocalSearch!
+    var localSearchResponse:MKLocalSearchResponse!
+    var error:NSError!
+    var pointAnnotation:MKPointAnnotation!
+    var pinAnnotationView:MKPinAnnotationView!
+    
+    @IBOutlet var mapView: MKMapView!
+
+    @IBAction func showSearchBar(sender: AnyObject) {
+        // Create the search controller and make it perform the results updating.
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        // Present the view controller
+        
+    presentViewController(searchController, animated: true, completion: nil)
+    }
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
-    // 1
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        // 2
-        if status == .AuthorizedWhenInUse {
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar){
+        //1
+        searchBar.resignFirstResponder()
+        dismissViewControllerAnimated(true, completion: nil)
+        if self.mapView.annotations.count != 0{
+            annotation = self.mapView.annotations[0] as! MKAnnotation
+            self.mapView.removeAnnotation(annotation)
+        }
+        //2
+        localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = searchBar.text
+        localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
             
-            // 3
-            locationManager.startUpdatingLocation()
+            if localSearchResponse == nil{
+                var alert = UIAlertView(title: nil, message: "Place not found", delegate: self, cancelButtonTitle: "Try again")
+                alert.show()
+                return
+            }
+            //3
+            self.pointAnnotation = MKPointAnnotation()
+            self.pointAnnotation.title = searchBar.text
+            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse.boundingRegion.center.latitude, longitude:     localSearchResponse.boundingRegion.center.longitude)
             
-            //4
-            mapView.myLocationEnabled = true
-            mapView.settings.myLocationButton = true
+            
+            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
+            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
+            self.mapView.addAnnotation(self.pinAnnotationView.annotation)
+            
+            
+            var span = MKCoordinateSpanMake(0.075, 0.075)
+            var lat = localSearchResponse.boundingRegion.center.latitude
+            var long = localSearchResponse.boundingRegion.center.longitude
+            var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long), span: span)
+                
+            self.mapView.setRegion(region, animated: true)
         }
     }
     
-    // 5
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        if let location = locations.first as? CLLocation {
-            
-            var camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        //when touch background, keyboard dismisses
+//        override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+//            searchBar.endEditing(true)
+//            
+//    
+//        }
+}
 
-            var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-            self.view = mapView
-            
-            //marker
-            var marker = GMSMarker()
-            marker.position = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-//            marker.title = "Sydney"
-//            marker.snippet = "Australia"
-            marker.map = mapView
 
-            
-            
-            
-            
-            
-            // 7
-            locationManager.stopUpdatingLocation()
-        }
-    }
-    
-    
-//    @IBAction func pickPlace(sender: UIBarButtonItem) {
-//        let center = CLLocationCoordinate2DMake(51.5108396, -0.0922251)
-//        let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
-//        let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
-//        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-//        let config = GMSPlacePickerConfig(viewport: viewport)
-//        var placePicker = GMSPlacePicker(config: config)
+//import UIKit
+//import MapKit
+//
+//class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate {
+//
+//    @IBOutlet var theMap: MKMapView!
+//    
+//    var manager:CLLocationManager!
+//    var locationManager : CLLocationManager!
+//    @IBOutlet var searchBar: UISearchBar!
+//    
+//    var searchController:UISearchController!
+//    var annotation:MKAnnotation!
+//    var localSearchRequest:MKLocalSearchRequest!
+//    var localSearch:MKLocalSearch!
+//    var localSearchResponse:MKLocalSearchResponse!
+//    var error:NSError!
+//    var pointAnnotation:MKPointAnnotation!
+//    var pinAnnotationView:MKPinAnnotationView!
+//    
+//    override func viewDidLoad(){
+//        super.viewDidLoad()
+//        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+//        centerMapOnLocation(initialLocation)
 //        
-//        placePicker?.pickPlaceWithCallback({ (place: GMSPlace?, error: NSError?) -> Void in
-//            if let error = error {
-//                println("Pick Place error: \(error.localizedDescription)")
+//        theMap.showsUserLocation = true
+//
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
+//        
+//        theMap.delegate = self
+//        theMap.mapType = MKMapType.Standard
+//        theMap.showsUserLocation = true
+//        
+//        
+//        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 34.03, longitude: 118.14)
+//        let span = MKCoordinateSpanMake(100, 80)
+//        let region = MKCoordinateRegionMake(coordinate, span)
+//        self.theMap.setRegion(region, animated: true)
+//    }
+//    
+//    let regionRadius: CLLocationDistance = 1000
+//    func centerMapOnLocation(location: CLLocation) {
+//        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+//            regionRadius * 2.0, regionRadius * 2.0)
+//        theMap.setRegion(coordinateRegion, animated: true)
+//    }
+//
+//    
+//    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+//        
+//        if overlay is MKPolyline {
+//            var polylineRenderer = MKPolylineRenderer(overlay: overlay)
+//            polylineRenderer.strokeColor = UIColor.blueColor()
+//            polylineRenderer.lineWidth = 4
+//            return polylineRenderer
+//        }
+//        return nil
+//    }
+//    
+//  
+//    //when touch background, keyboard dismisses
+//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        searchBar.endEditing(true)
+//        
+//    }
+//    
+//    ////asdklfjaklsdfjlasf
+//    func searchBarSearchButtonClicked(searchBar: UISearchBar){
+//        //1
+//        searchBar.resignFirstResponder()
+//        dismissViewControllerAnimated(true, completion: nil)
+//        if self.theMap.annotations.count != 0{
+//            annotation = self.theMap.annotations[0] as! MKAnnotation
+//            self.theMap.removeAnnotation(annotation)
+//        }
+//        //2
+//        localSearchRequest = MKLocalSearchRequest()
+//        localSearchRequest.naturalLanguageQuery = searchBar.text
+//        localSearch = MKLocalSearch(request: localSearchRequest)
+//        localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
+//            
+//            if localSearchResponse == nil{
+//                var alert = UIAlertView(title: nil, message: "Place not found", delegate: self, cancelButtonTitle: "Try again")
+//                alert.show()
 //                return
 //            }
+//            //3
+//            self.pointAnnotation = MKPointAnnotation()
+//            self.pointAnnotation.title = searchBar.text
+//            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse.boundingRegion.center.latitude, longitude:     localSearchResponse.boundingRegion.center.longitude)
 //            
-//            if let place = place {
-//                println("Place name \(place.name)")
-//                println("Place address \(place.formattedAddress)")
-//                println("Place attributions \(place.attributions)")
-//            } else {
-//                println("No place selected")
-//            }
-//        })
+//            
+//            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
+//            self.theMap.centerCoordinate = self.pointAnnotation.coordinate
+//            self.theMap.addAnnotation(self.pinAnnotationView.annotation)
+//        }
 //    }
-}
+//}

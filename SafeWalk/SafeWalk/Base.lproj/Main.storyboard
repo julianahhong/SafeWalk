@@ -9,36 +9,72 @@
             <objects>
                 <viewController id="V1n-ta-R4f" customClass="ViewController" customModule="SafeWalk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sDY-fg-as9"/>
-                        <viewControllerLayoutGuide type="bottom" id="ggs-Ie-yu0"/>
+                        <viewControllerLayoutGuide type="top" id="WFj-V8-PSY"/>
+                        <viewControllerLayoutGuide type="bottom" id="dME-Z2-Vcy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8RO-VE-Grw">
+                    <view key="view" contentMode="scaleToFill" id="8IR-G1-eM2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-Op-ISb" customClass="GMSMapView">
-                                <rect key="frame" x="187.5" y="333.5" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obc-Gs-eIr">
-                                <rect key="frame" x="141" y="156" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soU-qO-yYj">
+                                <rect key="frame" x="-8" y="-6" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="70M-vc-bEU"/>
+                                    <constraint firstAttribute="height" constant="44" id="wXH-ma-ZGT"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="SafeWalk" id="HsO-8A-fxj">
+                                        <barButtonItem key="rightBarButtonItem" title="search" id="3A8-HZ-PU1" userLabel="Search">
+                                            <connections>
+                                                <action selector="showSearchBar:" destination="V1n-ta-R4f" id="p2f-qn-KFb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="99w-2P-u1q">
+                                <rect key="frame" x="-16" y="83" width="391" height="584"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="391" id="ney-Jh-0g3"/>
+                                    <constraint firstAttribute="height" constant="584" id="tGt-qk-MSC"/>
+                                </constraints>
+                            </mapView>
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-74-AoE">
+                                <rect key="frame" x="0.0" y="39" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="HZw-Op-ISb" secondAttribute="centerX" id="OAv-3L-775"/>
-                            <constraint firstAttribute="centerY" secondItem="HZw-Op-ISb" secondAttribute="centerY" id="jdL-HE-cde"/>
+                            <constraint firstItem="99w-2P-u1q" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="GcC-I4-ays"/>
+                            <constraint firstAttribute="centerX" secondItem="99w-2P-u1q" secondAttribute="centerX" id="WsE-yG-dme"/>
+                            <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="8IR-G1-eM2" secondAttribute="top" constant="50" id="g89-cM-tb3"/>
+                            <constraint firstAttribute="centerX" secondItem="soU-qO-yYj" secondAttribute="centerX" id="hKv-o1-6Zk"/>
+                            <constraint firstAttribute="centerX" secondItem="9mr-74-AoE" secondAttribute="centerX" id="hwZ-3E-9wX"/>
+                            <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="99w-2P-u1q" secondAttribute="bottom" id="i0G-tl-dDP"/>
+                            <constraint firstAttribute="trailing" secondItem="99w-2P-u1q" secondAttribute="trailing" id="uyw-02-eSR"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="g89-cM-tb3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="mapView" destination="HZw-Op-ISb" id="L8Y-15-kBl"/>
+                        <outlet property="mapView" destination="99w-2P-u1q" id="wI3-XN-JCQ"/>
+                        <outlet property="searchDisplayController" destination="NJt-we-7GJ" id="0fG-gG-mes"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zly-dX-5go" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="NJt-we-7GJ">
+                    <connections>
+                        <outlet property="delegate" destination="V1n-ta-R4f" id="BcN-M5-MyT"/>
+                        <outlet property="searchContentsController" destination="V1n-ta-R4f" id="pUh-l5-yiG"/>
+                        <outlet property="searchResultsDataSource" destination="V1n-ta-R4f" id="Kvf-5q-sMh"/>
+                        <outlet property="searchResultsDelegate" destination="V1n-ta-R4f" id="5wY-IO-Bbm"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-204.5" y="-809.5"/>
         </scene>
