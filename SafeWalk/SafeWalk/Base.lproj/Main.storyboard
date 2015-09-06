@@ -16,26 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soU-qO-yYj">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="70M-vc-bEU"/>
-                                    <constraint firstAttribute="height" constant="60" id="Bc1-te-P09"/>
-                                    <constraint firstAttribute="height" constant="44" id="wXH-ma-ZGT"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem id="HsO-8A-fxj"/>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="70M-vc-bEU"/>
-                                        <exclude reference="Bc1-te-P09"/>
-                                        <exclude reference="wXH-ma-ZGT"/>
-                                    </mask>
-                                </variation>
-                            </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="99w-2P-u1q">
-                                <rect key="frame" x="0.0" y="83" width="375" height="584"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="99w-2P-u1q">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="391" id="kUF-2s-iMH"/>
                                     <constraint firstAttribute="width" constant="391" id="ney-Jh-0g3"/>
@@ -49,20 +31,18 @@
                                     </mask>
                                 </variation>
                             </mapView>
-                            <searchBar contentMode="redraw" placeholder="Enter your location" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-74-AoE">
-                                <rect key="frame" x="0.0" y="39" width="375" height="44"/>
+                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="prominent" placeholder="Enter your location" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-74-AoE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.21568627450980393" green="0.18823529411764706" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="26k-MB-dz4"/>
-                            <constraint firstItem="soU-qO-yYj" firstAttribute="top" secondItem="8IR-G1-eM2" secondAttribute="top" id="2JX-ug-Xdk"/>
-                            <constraint firstItem="9mr-74-AoE" firstAttribute="leading" secondItem="soU-qO-yYj" secondAttribute="trailing" constant="-367" id="4yx-Mr-Nl9"/>
-                            <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="soU-qO-yYj" secondAttribute="bottom" id="870-XL-8Nm"/>
+                            <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="WFj-V8-PSY" secondAttribute="bottom" id="2ax-4G-QMo"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="C2r-fD-UWA"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="GcC-I4-ays"/>
-                            <constraint firstItem="soU-qO-yYj" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="JAH-Xy-kJ1"/>
                             <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="99w-2P-u1q" secondAttribute="bottom" id="QTS-fT-fbL"/>
                             <constraint firstItem="9mr-74-AoE" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="Tdo-yq-9si"/>
                             <constraint firstAttribute="centerX" secondItem="99w-2P-u1q" secondAttribute="centerX" id="WsE-yG-dme"/>
@@ -70,18 +50,13 @@
                             <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="WFj-V8-PSY" secondAttribute="bottom" constant="19" id="fi8-ph-dhk"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="8IR-G1-eM2" secondAttribute="top" constant="50" id="g89-cM-tb3"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="gEF-lo-Hsb"/>
-                            <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="soU-qO-yYj" secondAttribute="bottom" constant="1" id="gV3-hc-n4L"/>
-                            <constraint firstAttribute="centerX" secondItem="soU-qO-yYj" secondAttribute="centerX" id="hKv-o1-6Zk"/>
                             <constraint firstAttribute="centerX" secondItem="9mr-74-AoE" secondAttribute="centerX" id="hwZ-3E-9wX"/>
                             <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="99w-2P-u1q" secondAttribute="bottom" id="i0G-tl-dDP"/>
-                            <constraint firstAttribute="trailing" secondItem="soU-qO-yYj" secondAttribute="trailing" id="l2F-gu-CgV"/>
                             <constraint firstAttribute="trailing" secondItem="99w-2P-u1q" secondAttribute="trailing" id="uyw-02-eSR"/>
                             <constraint firstAttribute="trailing" secondItem="9mr-74-AoE" secondAttribute="trailing" id="xVb-kv-W9S"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="4yx-Mr-Nl9"/>
-                                <exclude reference="gV3-hc-n4L"/>
                                 <exclude reference="26k-MB-dz4"/>
                                 <exclude reference="C2r-fD-UWA"/>
                                 <exclude reference="Y7m-xO-I9K"/>
