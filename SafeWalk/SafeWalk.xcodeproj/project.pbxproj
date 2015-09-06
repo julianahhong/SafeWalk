@@ -17,6 +17,7 @@
 		635DA12A1B9BFD740078BAE4 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DA1291B9BFD740078BAE4 /* VCMapView.swift */; };
 		635DA12C1B9BFD7E0078BAE4 /* Safety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DA12B1B9BFD7E0078BAE4 /* Safety.swift */; };
 		635DA12E1B9BFDBD0078BAE4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DA12D1B9BFDBD0078BAE4 /* SecondViewController.swift */; };
+		635DA1301B9C026F0078BAE4 /* philly.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 635DA12F1B9C026F0078BAE4 /* philly.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		635DA1291B9BFD740078BAE4 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		635DA12B1B9BFD7E0078BAE4 /* Safety.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Safety.swift; sourceTree = "<group>"; };
 		635DA12D1B9BFDBD0078BAE4 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		635DA12F1B9C026F0078BAE4 /* philly.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = philly.gpx; sourceTree = "<group>"; };
 		AAFBA120FE917D67A0576AAF /* Pods-SafeWalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeWalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeWalk/Pods-SafeWalk.debug.xcconfig"; sourceTree = "<group>"; };
 		E11AC9A7AF90F264A557CB8D /* Pods-SafeWalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeWalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeWalk/Pods-SafeWalk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 		36BAB02B1B9AD9E900F2B5D2 = {
 			isa = PBXGroup;
 			children = (
+				635DA12F1B9C026F0078BAE4 /* philly.gpx */,
 				36BAB0361B9AD9E900F2B5D2 /* SafeWalk */,
 				36BAB04C1B9AD9E900F2B5D2 /* SafeWalkTests */,
 				36BAB0351B9AD9E900F2B5D2 /* Products */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BAB03F1B9AD9E900F2B5D2 /* Main.storyboard in Resources */,
+				635DA1301B9C026F0078BAE4 /* philly.gpx in Resources */,
 				36BAB0441B9AD9E900F2B5D2 /* LaunchScreen.xib in Resources */,
 				36BAB0411B9AD9E900F2B5D2 /* Images.xcassets in Resources */,
 			);
