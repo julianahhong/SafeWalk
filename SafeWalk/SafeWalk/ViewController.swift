@@ -12,7 +12,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     //@IBOutlet var searchBar: UISearchBar!
     //@IBOutlet var theMap: MKMapView!
 
-    var searchController:UISearchController!
+    //var searchController:UISearchController!
     var annotation:MKAnnotation!
     var localSearchRequest:MKLocalSearchRequest!
     var localSearch:MKLocalSearch!
@@ -22,18 +22,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
     var pinAnnotationView:MKPinAnnotationView!
     
     @IBOutlet var mapView: MKMapView!
-
-    @IBAction func showSearchBar(sender: AnyObject) {
-        // Create the search controller and make it perform the results updating.
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.delegate = self
-        // Present the view controller
-        
-    presentViewController(searchController, animated: true, completion: nil)
-    }
+    @IBOutlet var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -41,16 +34,15 @@ class ViewController: UIViewController, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
-        //1
-        searchBar.resignFirstResponder()
-        dismissViewControllerAnimated(true, completion: nil)
+        searchBar.endEditing(true)
+
         if self.mapView.annotations.count != 0{
             annotation = self.mapView.annotations[0] as! MKAnnotation
             self.mapView.removeAnnotation(annotation)
         }
-        //2
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = searchBar.text
         localSearch = MKLocalSearch(request: localSearchRequest)
@@ -61,7 +53,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
                 alert.show()
                 return
             }
-            //3
             self.pointAnnotation = MKPointAnnotation()
             self.pointAnnotation.title = searchBar.text
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse.boundingRegion.center.latitude, longitude:     localSearchResponse.boundingRegion.center.longitude)
@@ -79,13 +70,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
                 
             self.mapView.setRegion(region, animated: true)
         }
+        
     }
-    
         //when touch background, keyboard dismisses
-//        override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-//            searchBar.endEditing(true)
-//            
-//    
-//        }
+            override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+                searchBar.endEditing(true)
+            }
+
 }
+
 
