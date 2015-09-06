@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V1n-ta-R4f">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -36,21 +37,33 @@
                                 <color key="barTintColor" red="0.21568627450980393" green="0.18823529411764706" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Banner" translatesAutoresizingMaskIntoConstraints="NO" id="Fty-E1-4UQ">
+                                <rect key="frame" x="0.0" y="477" width="375" height="190"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="26k-MB-dz4"/>
+                            <constraint firstItem="Fty-E1-4UQ" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leadingMargin" id="A0P-cJ-BCk"/>
                             <constraint firstAttribute="trailing" secondItem="99w-2P-u1q" secondAttribute="trailing" id="AdN-Z0-rZB"/>
                             <constraint firstItem="9mr-74-AoE" firstAttribute="trailing" secondItem="99w-2P-u1q" secondAttribute="trailing" id="Axk-2m-rOt"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="C2r-fD-UWA"/>
+                            <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="Fty-E1-4UQ" secondAttribute="bottom" id="DZ3-pT-Kbj"/>
                             <constraint firstItem="9mr-74-AoE" firstAttribute="leading" secondItem="99w-2P-u1q" secondAttribute="leading" id="IRM-Ci-UYT"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="JHS-10-7Un"/>
                             <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="WFj-V8-PSY" secondAttribute="bottom" id="LT2-eO-Ia4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fty-E1-4UQ" secondAttribute="trailing" id="PEM-j7-Qml"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="RbM-bA-AxM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="99w-2P-u1q" secondAttribute="trailing" id="TLj-DX-oqw"/>
+                            <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="Fty-E1-4UQ" secondAttribute="bottom" id="VON-ls-hX7"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="Y7m-xO-I9K"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="bottom" secondItem="dME-Z2-Vcy" secondAttribute="top" id="a0f-pp-VRV"/>
+                            <constraint firstItem="Fty-E1-4UQ" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leadingMargin" constant="-16" id="dFK-Dw-GXc"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="8IR-G1-eM2" secondAttribute="top" constant="50" id="g89-cM-tb3"/>
                             <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="99w-2P-u1q" secondAttribute="bottom" id="i0G-tl-dDP"/>
+                            <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="Fty-E1-4UQ" secondAttribute="bottom" constant="16" id="iJ2-a9-TZF"/>
+                            <constraint firstItem="99w-2P-u1q" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leadingMargin" id="rSO-NW-BGC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fty-E1-4UQ" secondAttribute="trailing" constant="-16" id="tN5-9g-w7N"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -58,7 +71,11 @@
                                 <exclude reference="C2r-fD-UWA"/>
                                 <exclude reference="Y7m-xO-I9K"/>
                                 <exclude reference="g89-cM-tb3"/>
+                                <exclude reference="A0P-cJ-BCk"/>
+                                <exclude reference="PEM-j7-Qml"/>
+                                <exclude reference="DZ3-pT-Kbj"/>
                                 <exclude reference="i0G-tl-dDP"/>
+                                <exclude reference="iJ2-a9-TZF"/>
                             </mask>
                         </variation>
                     </view>
@@ -82,4 +99,7 @@
             <point key="canvasLocation" x="-203.5" y="-809.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Banner" width="320" height="161"/>
+    </resources>
 </document>
