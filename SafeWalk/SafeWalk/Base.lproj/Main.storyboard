@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V1n-ta-R4f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V1n-ta-R4f">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="99w-2P-u1q">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="99w-2P-u1q">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="391" id="kUF-2s-iMH"/>
@@ -31,7 +31,7 @@
                                     </mask>
                                 </variation>
                             </mapView>
-                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="prominent" placeholder="Enter your location" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-74-AoE">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Enter your location" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-74-AoE">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.21568627450980393" green="0.18823529411764706" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
@@ -40,20 +40,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="26k-MB-dz4"/>
-                            <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="WFj-V8-PSY" secondAttribute="bottom" id="2ax-4G-QMo"/>
+                            <constraint firstAttribute="trailing" secondItem="99w-2P-u1q" secondAttribute="trailing" id="AdN-Z0-rZB"/>
+                            <constraint firstItem="9mr-74-AoE" firstAttribute="trailing" secondItem="99w-2P-u1q" secondAttribute="trailing" id="Axk-2m-rOt"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="C2r-fD-UWA"/>
-                            <constraint firstItem="99w-2P-u1q" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="GcC-I4-ays"/>
-                            <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="99w-2P-u1q" secondAttribute="bottom" id="QTS-fT-fbL"/>
-                            <constraint firstItem="9mr-74-AoE" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="Tdo-yq-9si"/>
-                            <constraint firstAttribute="centerX" secondItem="99w-2P-u1q" secondAttribute="centerX" id="WsE-yG-dme"/>
+                            <constraint firstItem="9mr-74-AoE" firstAttribute="leading" secondItem="99w-2P-u1q" secondAttribute="leading" id="IRM-Ci-UYT"/>
+                            <constraint firstItem="99w-2P-u1q" firstAttribute="leading" secondItem="8IR-G1-eM2" secondAttribute="leading" id="JHS-10-7Un"/>
+                            <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="WFj-V8-PSY" secondAttribute="bottom" id="LT2-eO-Ia4"/>
+                            <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="RbM-bA-AxM"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="Y7m-xO-I9K"/>
-                            <constraint firstItem="9mr-74-AoE" firstAttribute="top" secondItem="WFj-V8-PSY" secondAttribute="bottom" constant="19" id="fi8-ph-dhk"/>
+                            <constraint firstItem="99w-2P-u1q" firstAttribute="bottom" secondItem="dME-Z2-Vcy" secondAttribute="top" id="a0f-pp-VRV"/>
                             <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="8IR-G1-eM2" secondAttribute="top" constant="50" id="g89-cM-tb3"/>
-                            <constraint firstItem="99w-2P-u1q" firstAttribute="top" secondItem="9mr-74-AoE" secondAttribute="bottom" id="gEF-lo-Hsb"/>
-                            <constraint firstAttribute="centerX" secondItem="9mr-74-AoE" secondAttribute="centerX" id="hwZ-3E-9wX"/>
                             <constraint firstItem="dME-Z2-Vcy" firstAttribute="top" secondItem="99w-2P-u1q" secondAttribute="bottom" id="i0G-tl-dDP"/>
-                            <constraint firstAttribute="trailing" secondItem="99w-2P-u1q" secondAttribute="trailing" id="uyw-02-eSR"/>
-                            <constraint firstAttribute="trailing" secondItem="9mr-74-AoE" secondAttribute="trailing" id="xVb-kv-W9S"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
